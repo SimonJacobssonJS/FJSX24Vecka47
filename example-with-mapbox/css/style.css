@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main #map {
+    max-width: 1000px;
+    height: 500px;
+    width: 100%;
+    box-shadow: 0 0 3rem rgba(0,0,0,.2);
+}
+
+.departure {
+    border: 1px solid #dcdcdc;
+    padding-left: 1rem;
+}
+
+.departure p span {
+    font-weight: 700;
+}
