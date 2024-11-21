@@ -8,6 +8,26 @@
 // Uppgift:
 // Visa endast titeln och användar-ID för varje inlägg.
 
+// Hämta data från JSONPlaceholder
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => {
+    // Kontrollera om svaret är lyckat
+    if (!response.ok) {
+      throw new Error(`HTTP-fel! status: ${response.status}`);
+    }
+    return response.json(); // Omvandla svaret till JSON
+  })
+  .then((posts) => {
+    // Loopa igenom alla inlägg och logga titel och användar-ID
+    posts.forEach((post) => {
+      console.log(`User ID: ${post.userId}, Title: "${post.title}"`);
+    });
+  })
+  .catch((error) => {
+    // Hantera fel
+    console.error("Det gick inte att hämta data:", error);
+  });
+
 // -----------------------------------------------------------
 // Övning 2: Hantera fel i nätverksförfrågningar
 
